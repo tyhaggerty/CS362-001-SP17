@@ -1,1 +1,1 @@
-CS 362 - Software Engineering II - Homework Assignments
+This is my homework assignment #1
