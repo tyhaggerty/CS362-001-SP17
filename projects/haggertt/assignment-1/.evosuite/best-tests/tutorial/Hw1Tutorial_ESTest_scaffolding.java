@@ -6,33 +6,62 @@
 
 package tutorial;
 
+import org.evosuite.runtime.annotation.EvoSuiteClassExclude;
 import org.junit.BeforeClass;
 import org.junit.Before;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.evosuite.runtime.sandbox.Sandbox;
+import org.evosuite.runtime.sandbox.Sandbox.SandboxMode;
 
+@EvoSuiteClassExclude
 public class Hw1Tutorial_ESTest_scaffolding {
 
   private static final java.util.Properties defaultProperties = (java.util.Properties) java.lang.System.getProperties().clone(); 
 
+  private org.evosuite.runtime.thread.ThreadStopper threadStopper =  new org.evosuite.runtime.thread.ThreadStopper (org.evosuite.runtime.thread.KillSwitchHandler.getInstance(), 3000);
+
   @BeforeClass 
-  public static void initEvoSuiteFramework() {
+  public static void initEvoSuiteFramework() { 
+    org.evosuite.runtime.RuntimeSettings.className = "tutorial.Hw1Tutorial"; 
+    org.evosuite.runtime.GuiSupport.initialize(); 
+    org.evosuite.runtime.RuntimeSettings.maxNumberOfThreads = 100; 
+    org.evosuite.runtime.RuntimeSettings.maxNumberOfIterationsPerLoop = 10000; 
+    org.evosuite.runtime.RuntimeSettings.mockSystemIn = true; 
+    org.evosuite.runtime.RuntimeSettings.sandboxMode = org.evosuite.runtime.sandbox.Sandbox.SandboxMode.RECOMMENDED; 
+    org.evosuite.runtime.sandbox.Sandbox.initializeSecurityManagerForSUT(); 
+    org.evosuite.runtime.classhandling.JDKClassResetter.init(); 
     initializeClasses();
-  }
+    org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+  } 
 
   @AfterClass 
   public static void clearEvoSuiteFramework(){ 
-    java.lang.System.setProperties((java.util.Properties) defaultProperties.clone());
+    Sandbox.resetDefaultSecurityManager(); 
+    java.lang.System.setProperties((java.util.Properties) defaultProperties.clone()); 
   } 
 
   @Before 
   public void initTestCase(){ 
-    setSystemProperties();
+    threadStopper.storeCurrentThreads();
+    threadStopper.startRecordingTime();
+    org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().initHandler(); 
+    org.evosuite.runtime.sandbox.Sandbox.goingToExecuteSUTCode(); 
+    setSystemProperties(); 
+    org.evosuite.runtime.GuiSupport.setHeadless(); 
+    org.evosuite.runtime.Runtime.getInstance().resetRuntime(); 
+    org.evosuite.runtime.agent.InstrumentingAgent.activate(); 
   } 
 
   @After 
   public void doneWithTestCase(){ 
-    resetClasses();
+    threadStopper.killAndJoinClientThreads();
+    org.evosuite.runtime.jvm.ShutdownHookHandler.getInstance().safeExecuteAddedHooks(); 
+    org.evosuite.runtime.classhandling.JDKClassResetter.reset(); 
+    resetClasses(); 
+    org.evosuite.runtime.sandbox.Sandbox.doneWithExecutingSUTCode(); 
+    org.evosuite.runtime.agent.InstrumentingAgent.deactivate(); 
+    org.evosuite.runtime.GuiSupport.restoreHeadlessMode(); 
   } 
 
   public void setSystemProperties() {
@@ -80,6 +109,9 @@ public class Hw1Tutorial_ESTest_scaffolding {
   }
 
   private static void initializeClasses() {
+    org.evosuite.runtime.classhandling.ClassStateSupport.initializeClasses(Hw1Tutorial_ESTest_scaffolding.class.getClassLoader() ,
+      "tutorial.Hw1Tutorial"
+    );
   } 
 
   private static void resetClasses() {

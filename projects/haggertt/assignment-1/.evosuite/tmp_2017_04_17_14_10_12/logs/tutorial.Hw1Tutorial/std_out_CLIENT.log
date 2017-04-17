@@ -1,0 +1,73 @@
+* Starting client
+* Connecting to master process on port 14268
+* Analyzing classpath: 
+  - /Users/Ty/IdeaProjects/CS362/CS362-001-SP17/projects/haggertt/assignment-1/target/test-classes
+  - /Users/Ty/IdeaProjects/CS362/CS362-001-SP17/projects/haggertt/assignment-1/target/classes
+  - /Users/Ty/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar
+* Finished analyzing classpath
+* Generating tests for class tutorial.Hw1Tutorial
+* Test criteria:
+  - Line Coverage
+  - Branch Coverage
+  - Exception
+  - Mutation testing (weak)
+  - Method-Output Coverage
+  - Top-Level Method Coverage
+  - No-Exception Top-Level Method Coverage
+  - Context Branch Coverage
+* Setting up search algorithm for whole suite generation
+* Total number of test goals: 
+  - Line 11
+  - Branch 7
+  - Exception 0
+  - MutationFactory 50
+  - Output 4
+  - Method 4
+  - MethodNoException 4
+  - CBranchFitnessFactory 7
+* Using seed 1492463512029
+* Starting evolution
+* Search finished after 51s and 570 generations, 122960 statements, best individual has fitness: 1.6666666666666667
+* Writing sequences to pool
+* Minimizing test suite
+* Going to analyze the coverage criteria
+* Coverage analysis for criterion LINE
+* Coverage of criterion LINE: 100%
+* Total number of goals: 11
+* Number of covered goals: 11
+* Coverage analysis for criterion BRANCH
+* Coverage of criterion BRANCH: 100%
+* Total number of goals: 7
+* Number of covered goals: 7
+* Coverage analysis for criterion EXCEPTION
+* Coverage of criterion EXCEPTION: 100%
+* Total number of goals: 5
+* Number of covered goals: 5
+* Coverage analysis for criterion WEAKMUTATION
+* Coverage of criterion WEAKMUTATION: 94%
+* Total number of goals: 50
+* Number of covered goals: 47
+* Coverage analysis for criterion OUTPUT
+* Coverage of criterion OUTPUT: 100%
+* Total number of goals: 4
+* Number of covered goals: 4
+* Coverage analysis for criterion METHOD
+* Coverage of criterion METHOD: 100%
+* Total number of goals: 4
+* Number of covered goals: 4
+* Coverage analysis for criterion METHODNOEXCEPTION
+* Coverage of criterion METHODNOEXCEPTION: 100%
+* Total number of goals: 4
+* Number of covered goals: 4
+* Coverage analysis for criterion CBRANCH
+* Coverage of criterion CBRANCH: 100%
+* Total number of goals: 7
+* Number of covered goals: 7
+* Generated 9 tests with total length 43
+* Resulting test suite's coverage: 99% (average coverage for all fitness functions)
+* Generating assertions
+* Resulting test suite's mutation score: 66%
+* Compiling and checking tests
+* Writing JUnit test case 'Hw1Tutorial_ESTest' to /Users/Ty/IdeaProjects/CS362/CS362-001-SP17/projects/haggertt/assignment-1/.evosuite/tmp_2017_04_17_14_10_12/tests
+* Done!
+

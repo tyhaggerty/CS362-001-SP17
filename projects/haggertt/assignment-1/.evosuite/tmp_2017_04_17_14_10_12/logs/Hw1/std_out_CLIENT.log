@@ -1,6 +1,7 @@
 * Starting client
-* Connecting to master process on port 21872
+* Connecting to master process on port 8284
 * Analyzing classpath: 
+  - /Users/Ty/IdeaProjects/CS362/CS362-001-SP17/projects/haggertt/assignment-1/target/test-classes
   - /Users/Ty/IdeaProjects/CS362/CS362-001-SP17/projects/haggertt/assignment-1/target/classes
   - /Users/Ty/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar
 * Finished analyzing classpath
@@ -15,19 +16,19 @@
   - No-Exception Top-Level Method Coverage
   - Context Branch Coverage
 * Setting up search algorithm for whole suite generation
-[MASTER] 15:50:09.240 [pool-2-thread-1] WARN  TestSuiteSerialization - Cannot load tests because file does not exist: /Users/Ty/IdeaProjects/CS362/CS362-001-SP17/projects/haggertt/assignment-1/.evosuite/evosuite-seeds/Hw1.seed
+[MASTER] 14:10:17.616 [pool-2-thread-1] WARN  TestSuiteSerialization - Cannot load tests because file does not exist: /Users/Ty/IdeaProjects/CS362/CS362-001-SP17/projects/haggertt/assignment-1/.evosuite/evosuite-seeds/Hw1.seed
 * Total number of test goals: 
   - Line 30
   - Branch 18
   - Exception 0
-  - MutationFactory 376
+  - MutationFactory 381
   - Output 3
   - Method 6
   - MethodNoException 6
   - CBranchFitnessFactory 18
-* Using seed 1492383006311
+* Using seed 1492463414836
 * Starting evolution
-* Search finished after 66s and 189 generations, 60766 statements, best individual has fitness: 1.0833333333333333
+* Search finished after 76s and 319 generations, 113667 statements, best individual has fitness: 1.0833333333333333
 * Writing sequences to pool
 * Minimizing test suite
 * Going to analyze the coverage criteria
@@ -45,8 +46,8 @@
 * Number of covered goals: 11
 * Coverage analysis for criterion WEAKMUTATION
 * Coverage of criterion WEAKMUTATION: 99%
-* Total number of goals: 376
-* Number of covered goals: 374
+* Total number of goals: 381
+* Number of covered goals: 379
 * Coverage analysis for criterion OUTPUT
 * Coverage of criterion OUTPUT: 100%
 * Total number of goals: 3
@@ -63,11 +64,11 @@
 * Coverage of criterion CBRANCH: 100%
 * Total number of goals: 18
 * Number of covered goals: 18
-* Generated 21 tests with total length 40
+* Generated 21 tests with total length 39
 * Resulting test suite's coverage: 100% (average coverage for all fitness functions)
 * Generating assertions
-* Resulting test suite's mutation score: 15%
+* Resulting test suite's mutation score: 27%
 * Compiling and checking tests
-* Writing JUnit test case 'Hw1_ESTest' to /Users/Ty/IdeaProjects/CS362/CS362-001-SP17/projects/haggertt/assignment-1/.evosuite/tmp_2017_04_16_15_50_04/tests
+* Writing JUnit test case 'Hw1_ESTest' to /Users/Ty/IdeaProjects/CS362/CS362-001-SP17/projects/haggertt/assignment-1/.evosuite/tmp_2017_04_17_14_10_12/tests
 * Done!
 
